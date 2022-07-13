@@ -1,7 +1,7 @@
 export default function Counter({ $app }) {
   const render = () => {
     $app.innerHTML = `
-       <div class="container">
+        <div class="container">
           <h1>ui counter</h1>
           <div class="counter">
             <a href="#" class="minus-button"><span>-</span></a>
@@ -11,8 +11,20 @@ export default function Counter({ $app }) {
         </div>`;
   };
 
+  const initEventListener = () => {
+    const countDisplay = document.querySelector(".count-display");
+    const plusButton = document.querySelector(".plus-button");
+
+    const handlePlusButton = () => {
+      countDisplay.value = Number(countDisplay.value) + 1;
+    };
+
+    plusButton.addEventListener("click", handlePlusButton);
+  };
+
   const init = () => {
     render();
+    initEventListener();
   };
 
   init();
