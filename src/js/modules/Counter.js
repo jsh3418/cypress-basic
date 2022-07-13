@@ -17,6 +17,7 @@ export default function Counter({ $app }) {
     const minusButton = document.querySelector(".minus-button");
 
     const handlePlusButton = () => {
+      if (countDisplay.value >= 12) return;
       countDisplay.value = Number(countDisplay.value) + 1;
     };
 
