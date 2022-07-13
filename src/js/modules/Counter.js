@@ -22,6 +22,7 @@ export default function Counter({ $app }) {
     };
 
     const handleMinusButton = () => {
+      if (countDisplay.value <= 8) return;
       countDisplay.value = Number(countDisplay.value) - 1;
     };
 
