@@ -14,12 +14,18 @@ export default function Counter({ $app }) {
   const initEventListener = () => {
     const countDisplay = document.querySelector(".count-display");
     const plusButton = document.querySelector(".plus-button");
+    const minusButton = document.querySelector(".minus-button");
 
     const handlePlusButton = () => {
       countDisplay.value = Number(countDisplay.value) + 1;
     };
 
+    const handleMinusButton = () => {
+      countDisplay.value = Number(countDisplay.value) - 1;
+    };
+
     plusButton.addEventListener("click", handlePlusButton);
+    minusButton.addEventListener("click", handleMinusButton);
   };
 
   const init = () => {
